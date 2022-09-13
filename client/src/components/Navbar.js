@@ -6,9 +6,9 @@ import '../css/navbar.css'
 
 function Navbar() {
     return(
-    <nav class="nav">
-        <a class="nav-logo" href="/"
-        ><img src={logo} class="logo"
+    <nav className="nav">
+        <a className="nav-logo" href="/"
+        ><img src={logo} className="logo"
         /></a>
         <div>
         <ul>
