@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './images/logo/rakuten-logo.png'
 // Importing Navbar CSS
 import '../css/navbar.css'
+import {Link} from 'react-router-dom'
 
 
 function Navbar() {

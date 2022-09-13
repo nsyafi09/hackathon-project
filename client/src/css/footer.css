@@ -1,9 +1,23 @@
 /* FOOTER */
 
-footer {
-    border: 1px solid black;
-    margin-bottom: 0;
+
+.Footer {
+    background-color: aquamarine;
     padding-bottom: 0;
-    margin-top: 150px;
+    background-color: dimgray;
+  }
+  
+  .App-footer {
     text-align: center;
-}
+    color: white;
+  }
+  
+  .Footer-logo {
+    height: 10vmin;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }

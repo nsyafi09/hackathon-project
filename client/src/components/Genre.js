@@ -1,5 +1,5 @@
 import React from 'react';
-// Importing genre CSS
+import {Link} from 'react-router-dom'
 import '../css/genre.css'
 
 
@@ -13,6 +13,7 @@ function Genre () {
       <div class="cards-content">
         
         <div class="cards-list">
+        <Link className="components" to="/itempage">
           <div class="card 1">
             <div class="card_image">
               <img
@@ -23,6 +24,7 @@ function Genre () {
               <p>Basketball</p>
             </div>
           </div>
+          </Link>
 
           <div class="card 2">
             <div class="card_image">
