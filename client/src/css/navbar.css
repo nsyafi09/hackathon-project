@@ -1,0 +1,32 @@
+/* Header: NAVBAR */
+.logo {
+    padding-left: 1rem;
+    width: 5rem;
+    cursor: pointer;
+  }
+  
+  .nav {
+    box-shadow: var(--dark-shadow);
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .nav ul {
+    display: flex;
+    /* padding: 10px; */
+  }
+  
+  .nav li {
+    padding-right: 10px;
+  }
+  
+  @media all and (max-width: 500px) {
+  .nav li {
+    font-size: 0.6rem;
+  }
+  }
+  
+  /* NAVBAR ENDS HERE */
