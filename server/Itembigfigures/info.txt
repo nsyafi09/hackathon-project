@@ -1,0 +1,15 @@
+Apexlegends.jpg
+itempictureurl:https://shop.r10s.jp/book/cabinet/4719/9784756254719_1_4.jpg
+shopurl:https://books.rakuten.co.jp/rb/16829337/
+
+basketball.jpg
+itempictureurl:https://shop.r10s.jp/rakutensportszone/cabinet/08408093/wsn_forge.jpg
+shopurl:https://item.rakuten.co.jp/rakutensportszone/wsn043/?iasid=07rpp_10095___e6-l80z1fbb-8o-a6865d33-1e3a-402f-96f6-d0369402306b
+
+soccor.jpg
+itempictureurl:https://shop.r10s.jp/alpen/cabinet/img/349/8339150510_2.jpg
+shopurl:https://item.rakuten.co.jp/alpen/8339150510/
+
+baseball.jpg
+itempictureurl:https://item.rakuten.co.jp/leather-g/baseball-03/
+shopurl:https://shop.r10s.jp/leather-g/cabinet/shohin/baseball/baseball-03/kago-11.jpg
