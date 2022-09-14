@@ -7,6 +7,7 @@
   }
   
   .nav {
+    position: relative;
     box-shadow: var(--dark-shadow);
     padding: 4px;
     display: flex;
@@ -23,11 +24,103 @@
   .nav li {
     padding-right: 10px;
   }
+
+  .nav li a {
+    color: black;
+  }
+
+  .nav li:hover a {
+    opacity: 0.6;
+    transition: 0.2s;
+  }
   
-  @media all and (max-width: 500px) {
+  @media all and (max-width: 550px) {
   .nav li {
-    font-size: 0.6rem;
+    font-size: 0.9rem;
   }
   }
   
   /* NAVBAR ENDS HERE */
+
+
+  /* Extra Snippets */
+  
+  .navigation-menu {
+    margin-left: auto;
+  }
+  
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+  
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+  
+  .navigation-menu li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+  }
+  
+  .hamburger {
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+    opacity: .8;
+  transition: .4s;
+  }
+  
+  .hamburger:hover {
+    transition: 0.1s;
+    background-color: #d9d9d9;
+  }
+  
+  @media screen and (max-width: 550px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .navigation-menu ul {
+      flex-direction: column;
+      position: absolute;
+      top: 54px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 54px);
+      background-color: white;
+      border-top: 1px solid black;
+      display: none;
+    }
+  
+    .navigation-menu li {
+      text-align: center;
+      margin: 0;
+    }
+  
+    .navigation-menu li a {
+      color: black;
+      width: 100%;
+      padding: 1.5rem 0;
+    }
+  
+    .navigation-menu li:hover {
+      background-color: #d9d9d9;
+    }
+  
+    .navigation-menu.expanded ul {
+      display: block;
+    }
+  }
+  

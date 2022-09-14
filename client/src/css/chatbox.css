@@ -1,5 +1,60 @@
   .chatbox-container {
-    
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    margin: 0;
+  }
+
+/* Button */
+.collapse-btn {
+  position: absolute;
+  border-radius: 30px;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 30px;
+  text-align: center;
+
+  border: none;
+  border-radius: 2.5rem;
+  /* color: #fff; */
+  opacity: .8;
+  transition: .4s;
+}
+
+.collapse-btn svg {
+  width: 15px;
+}
+
+@media screen and (max-width: 550px) {
+  .chatbox-container {
+    margin: auto;
+  }
+
+  .collapse-btn {
+    margin-top: 10px;
+    display: flex;
+    margin: 10px auto;
+    /* display: inline; */
+    position: static;
+  }
+}
+
+
+
+
+  /* Collapsible */
+.collapsible-chat.expanded {
+      display: block;
+      position: absolute;
+      bottom: 60px;
+      right: 10px;
+      transition: .4s;
+    }
+
+  .collapsible-chat {
+    display: none;
     border-radius: 15px;
     /* position: absolute; */
     /* right: 40px;
@@ -8,13 +63,19 @@
     margin-top: 25px;
     width: 300px;
     height: 410px;
-    border: 1px solid black;
+    border: 2px solid #adadad;
     background-color: white;
   }
 
-  * {
-    margin: 0;
+  @media screen and (max-width: 550px) {
+    .collapsible-chat.expanded {
+      display: block;
+      position: static;
+    }
   }
+
+
+
 
   /* HEADER */
 
@@ -115,11 +176,13 @@
     height: 25px;
     border-radius: 10px 0 0 10px;
     background-color: #D9D9D9;
+    border: none;
   }
 
   .ChatSendForm {
     font-size: 12px;
     width: 40px;
-    height: 30px;
+    height: 27px;
     border-radius: 0 10px 10px 0;
+    border: none;
   }
