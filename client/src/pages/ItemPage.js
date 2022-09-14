@@ -10,7 +10,7 @@ function ItemPage() {
   return (
     <div>
       <Navbar />
-      <ShowItem/>
+      <ShowItem item_id = "this_is_item_id"/>
       <ChatBox/>
       <Footer/>
     </div>

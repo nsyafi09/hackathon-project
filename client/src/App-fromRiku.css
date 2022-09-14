@@ -1,0 +1,154 @@
+.App {
+    text-align: center;
+  }
+  
+  .Header-logo {
+    height: 10vmin;
+    padding-left: 4vmin;
+    padding-bottom: 4vmin;
+    padding-top: 4vmin;
+  }
+  
+  .App-header {
+    background-color: #FFF;
+    text-align: left;
+    color: black;
+  }
+  
+  .Header {
+    align-items: left;
+  }
+  
+  .ItemArea {
+    background-color: crimson;
+  }
+  
+  .Footer {
+    background-color: aquamarine;
+  }
+  
+  .App-footer {
+    background-color: dimgray;
+    text-align: center;
+    color: white;
+  }
+  
+  .Footer-logo {
+    height: 8vmin;
+    padding-bottom: 4vmin;
+    padding-top: 4vmin;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  .ItemArea {
+    font-size: 2rem;
+  }
+  
+  .ItemPIC {
+    width: 90%;
+  }
+  
+  .Item_name {
+    background-color: #FFF;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .Item_price {
+    background-color: #FFF;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .Item_rating {
+    background-color: #FFF;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .Item_description {
+    background-color: #FFF;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .ChatBoxArea {
+    background-color: #d4e9f2;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  
+  .ChatMessageArea {
+    overflow:auto;
+    width:97vw;
+    height:70vh;
+    background-color: rgb(238, 238, 238);
+    border: solid 5px #000000;/*線*/
+    border-radius: 10px;/*角の丸み*/
+  }
+  
+  .EachMSG {
+    width: 70%;
+    word-wrap: break-word;
+    font-size: 1.3rem;
+    background-color: rgb(214, 150, 150);
+    text-align: left;
+    margin-left: 5%;
+    border-radius: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .EachMSGfromMe {
+    width: 70%;
+    word-wrap: break-word;
+    font-size: 1.3rem;
+    background-color: rgb(234, 81, 81);
+    border-radius: 20px 10px 20px 20px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+  }
+  
+  
+  .ChatName {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  
+  .ChatContent {
+    text-align: left;
+    padding-right: 3%;
+    padding-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  
+  .ChatMSGDate {
+    font-size: 1rem;
+    text-align: right;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  
+  .ChatInputForm {
+    background-color: dimgrey;
+  }
+  
+  .InputForm {
+    font-size: 2rem;
+    width: 80%;
+    height: 2.5rem;
+  }
+  .ChatSendForm {
+    font-size: 1rem;
+    width: 80%;
+    height: 2rem;
+  }

@@ -1,61 +1,113 @@
 import '../css/chatbox.css';
+//import './App-fromRiku.css';
 import { useEffect, useState } from 'react';
 import getNowTime from '../Utils/Util';
 
-function ChatBox() {
-  const my_user_id = 500
-  const my_user_name = "EMERGENCY TYPHOON"
-  // Input form is controlled by React Hook Form
+function ChatBox(props) {
+  const my_user_id = props.user_id;
+  const item_id = props.item_id;
+  const my_user_name = props.user_name;
 
-  // Chat message list's length is variable
-  // So you have to handle state that have variable length
   // This will get all of message that API provide and render all.
   const [state, setState] = useState([]);
   const [text, setText] = useState(""); // for handle text inputed form
-
+  const [scroll, setScroll] = useState([]); // for handle ScrollPosition
+  
   // CAll API HERE
-  // For now, just read json and sparse that data.
+  // 初回のレンダリング時に呼ばれる関数
   useEffect(() => {
     // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
-    const access_db = async () => {
-        const response = await import("../pages/chat_data.json");
-        //console.log(response)
-        console.log(response.default['message-list'][0].user_id)
+    const access_get = async () => {
+        const requestOptions ={
+            method: 'GET',
+          };
+        const url = "http://localhost:3304/message-list";
+        const response = await fetch(url,requestOptions); // External API
+        const json = await response.json();
+        console.log(json);
+        //const response = await import("./chat_data.json"); // Internal Json
+        //console.log(response.default['message-list'][0].user_id);
 
         setState(
-            response.default['message-list']
-        ); // stateに反映する        
+            // response.default['message-list']
+            json
+        ); // stateに反映する
+        setScroll(json);
     };
-    access_db(); 
+    access_get();
+    console.log('First Data render!!'); 
   }, []);
 
+  // Regular Data Fetch : Update MessageList from Remote Server
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const requestOptions ={
+            method: 'GET'
+          };
+      const url = "http://localhost:3304/message-list";
+      const get_message_list = async () => {
+        const res = await fetch(url,requestOptions); // External API
+        const json = await res.json();
+        console.log(res);
+        console.log(json);
+        setState(
+            json// The API returns single elem Array. Why...?
+          ); // stateに反映する   
+      };
+      get_message_list();
+      console.log("Regular Data Fetching !!!!!!!")     
+    }, 1000);
+    return function(){clearInterval(intervalId)};
+  }, []);
+
+  // SEND / POST Message to API
   // Update state value with Input Area and Send Data to API
   const onClickSendText = () => {
-    const now_date = getNowTime()
-    console.log("Now Date is : " + `${now_date}`)
-    const messageInfo = {
-        user_id : my_user_id, user_name : my_user_name,
-        user_icon : "NoImage", date : now_date,
-        message : text,
-    }
-    setState(
-        [...state, messageInfo]
+    if (text.length <= 2) {
+        // The code that summon message "Message must have 2 text at least"
+    }else{
+        const now_date = getNowTime()
+        console.log("Now Date is : " + `${now_date}`)
+        const messageInfo = {
+            user_id : my_user_id, user_name : my_user_name,
+            user_icon : "NoImage", date : now_date,
+            message : text,
+        }
+        setState(
+            [...state, messageInfo]
         );
-    setText("");
+        setScroll([...state, messageInfo]);
+        setText("");
+        //After Locall state change, POST current situation to server
+        const post_message_list = async () => {
+            const requestOptions ={
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_id : my_user_id, user_name : my_user_name,
+                    user_icon : "NoImage", date : now_date,
+                    message : text,
+                })
+                //`user_id=${my_user_id}&user_name=${my_user_name}&
+                //user_icon="NoImage"&date=${now_date}&message=${text}`
+            };
+            const url = "http://localhost:3304/message-list";
+            const res = await fetch(url,requestOptions); // External API
+            console.log(res);
+            console.log(JSON.stringify(messageInfo));    
+        };
+      post_message_list();      
+    }
   }
 
 
-  // After rendering, scroll to lowest
+  // When Value State of scroll and Render was done, 
+  // It will controll scroll position to the bottom.
+  // In case of SendChat and First Display. 
   useEffect(() => {
-    try {
-        const el = document.getElementById(`chat-scroll-area`);
-        el.scrollTo(0, el.scrollHeight);
-      } catch (error) {
-        console.log("Error : Trying to get value of have not rendered")
-      }
-  });
+    setScrollToBottom();
+  },[scroll]);
 
-  
   console.log("This is state here")
   console.log(state)
 
@@ -88,34 +140,23 @@ function ChatBox() {
       }
     }
     console.log(list)
-
-
-    // HTML HERE
+    
     return (
-        <div className='chatbox-container'>
-
-            <div className="chat-header">
-                <p>Live Chat</p>
+        <div className="ChatBoxArea">
+            <div className='ChatMessageArea' id = "chat-scroll-area">
+                {list}
             </div>
-            <div className="ChatBoxArea">
-                <div className='ChatMessageArea' id="chat-scroll-area">
-                    {list}
+            <div className="ChatInputForm">
+                <div className="ChatInputTextForm">
+                <input value={text}
+                    onChange={(event) => setText(event.target.value)} 
+                    minlength="2" maxlength="40" size="10" className='InputForm'>
+                </input>
                 </div>
-                <div className="ChatInputForm">
-                    <div className="ChatInputTextForm">
-                        <input value={text}
-                            onChange={(event) => setText(event.target.value)} 
-                            minLength="2" maxLength="40" size="10" className='InputForm'>
-                        </input>
-                    </div>
-                    <div className="ChatSendFormArea">
-                        <button onClick={onClickSendText} className="ChatSendForm"> Send </button>
-                    </div>
+                <div className="ChatSendFormArea">
+                    <button onClick={onClickSendText} className="ChatSendForm"> Send </button>
                 </div>
             </div>
-
-            {/* <div className="ChatInputForm">
-            </div> */}
         </div>
       );    
   }else{
@@ -130,3 +171,12 @@ function ChatBox() {
 }
 
 export default ChatBox;
+
+function setScrollToBottom(){
+    try {
+        const el = document.getElementById(`chat-scroll-area`);
+        el.scrollTo(0, el.scrollHeight);
+    } catch (error) {
+        console.log("Error : Trying to get value of have not rendered")
+    }
+}

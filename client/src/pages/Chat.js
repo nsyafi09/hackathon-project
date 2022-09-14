@@ -9,7 +9,7 @@ function ChatPage() {
   return (
     <body>
       <Navbar />
-      <ChatBox/>
+      <ChatBox item_id = "14314312" user_id = {341234166} user_name = {"SMITH"}/>
       <Footer/>
     </body>
   );

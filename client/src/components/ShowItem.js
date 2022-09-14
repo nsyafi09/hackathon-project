@@ -1,8 +1,8 @@
-import './placeholder.css';
 import { useEffect, useState } from 'react';
+import '../App-fromRiku.css';
 
-
-function ShowItem() {
+function ShowItem(props) {
+  const item_id = props.item_id
   console.log("__dirname")
   console.log(__filename)
 
@@ -46,19 +46,17 @@ function ShowItem() {
   console.log(`${process.env.PUBLIC_URL}` + `${state.image1}`)
 
   return (
-    <section className="item-container">
-      <div className="item-picture">
+    <div className="ItemArea">
+      <p className="ItemPIC">
         <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
-      </div>
-      <div className="item-details">
-        <p className='Item_name'>{state.name ?? "loading"} </p>
-        <p className='Item_price'> Price : {state.price ?? "loading"} </p>
-        <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
-        <p className='Item_description'>{state.discription ?? "loading"} </p>
-      </div>
+      </p>
+      <p className='Item_name'>{state.name ?? "loading"} </p>
+      <p className='Item_price'> Price : {state.price ?? "loading"} </p>
+      <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
+      <p className='Item_description'>{state.discription ?? "loading"} </p>
       
-      {/* <a href="http://localhost:3000/anotherpage.html"> Link Test</a> */}
-    </section>
+      <a href="http://localhost:3000/anotherpage.html"> Link Test</a>
+    </div>
   );
 }
 
