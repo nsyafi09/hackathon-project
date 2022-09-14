@@ -94,7 +94,7 @@ function ChatBox() {
     return (
         <div className='chatbox-container'>
 
-            <div class="chat-header">
+            <div className="chat-header">
                 <p>Live Chat</p>
             </div>
             <div className="ChatBoxArea">
