@@ -93,17 +93,20 @@ function ChatBox() {
     // HTML HERE
     return (
         <div className='chatbox-container'>
-    
+
+            <div class="chat-header">
+                <p>Live Chat</p>
+            </div>
             <div className="ChatBoxArea">
-                <div className='ChatMessageArea' id = "chat-scroll-area">
+                <div className='ChatMessageArea' id="chat-scroll-area">
                     {list}
                 </div>
                 <div className="ChatInputForm">
                     <div className="ChatInputTextForm">
-                    <input value={text}
-                        onChange={(event) => setText(event.target.value)} 
-                        minLength="2" maxLength="40" size="10" className='InputForm'>
-                    </input>
+                        <input value={text}
+                            onChange={(event) => setText(event.target.value)} 
+                            minLength="2" maxLength="40" size="10" className='InputForm'>
+                        </input>
                     </div>
                     <div className="ChatSendFormArea">
                         <button onClick={onClickSendText} className="ChatSendForm"> Send </button>
@@ -111,8 +114,8 @@ function ChatBox() {
                 </div>
             </div>
 
-            <div className="ChatInputForm">
-            </div>
+            {/* <div className="ChatInputForm">
+            </div> */}
         </div>
       );    
   }else{

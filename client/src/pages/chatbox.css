@@ -1,80 +1,122 @@
-  /* .chatbox-container {
-    box-sizing: border-box;
+  .chatbox-container {
+    
+    border-radius: 15px;
+    position: absolute;
+    right: 40px;
+    bottom: 150px;
     width: 300px;
-    height: 100px;
-  } */
+    height: 410px;
+    border: 1px solid black;
+  }
 
+  * {
+    margin: 0;
+  }
+
+  /* HEADER */
+
+  .chat-header {
+    /* border: 1px solid red; */
+    border-radius: 15px 15px 0 0;
+    height: 2rem;
+    /* background-color: rgb(245, 47, 47); */
+
+    position: relative;
+    cursor: pointer;
+}
+
+.chat-header p {
+    display: block;
+    padding: 5px 10px;
+    color: black;
+    font-weight: 700;
+    /* margin-top: 1rem; */
+}
+
+
+/* CHAT AREA */
   .ChatBoxArea {
-    background-color: #d4e9f2;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    border-radius: 5px;
+    width: 275px;
+    margin-left: 10px;
   }
   
   .ChatMessageArea {
+    /* border: 1px solid black; */
+    background-color: #EEEEEE;
     overflow:auto;
-    width:100%;
-    height:70vh;
+    width:inherit;
+    border-radius: 5px;
+    height:320px;
   }
   
   .EachMSG {
     width: 70%;
     word-wrap: break-word;
-    font-size: 2rem;
+    font-size: 1rem;
     background-color: rgb(214, 150, 150);
     text-align: left;
     margin-left: 5%;
-    border-radius: 10px 20px 20px 20px;
-    margin-bottom: 20px;
+    border-radius: 10px 20px;
+    margin-bottom: 10px;
   }
   
   .EachMSGfromMe {
     width: 70%;
     word-wrap: break-word;
-    font-size: 30pt;
+    font-size: 1rem;
     background-color: rgb(234, 81, 81);
-    border-radius: 20px 10px 20px 20px;
+    border-radius: 10px 20px;
     margin-left: 25%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   
   .ChatName {
     font-weight: bold;
     text-align: left;
-    padding-left: 5%;
-    padding-top: 1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   
   .ChatContent {
     text-align: left;
-    padding-right: 3%;
-    padding-left: 5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    padding-left: 10px;
+    padding-top: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
   }
   
   .ChatMSGDate {
-    font-size: 25pt;
+    font-size: 0.7rem;
     text-align: right;
-    padding-right: 5%;
-    padding-bottom: 3%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    padding-right: 5px;
+    padding-bottom: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   
+
+  /* CHAT SEND */
   .ChatInputForm {
-    background-color: dimgrey;
+    margin-top: 10px;
+    display: flex;
   }
   
   .InputForm {
-    font-size: 40pt;
-    width: 80%;
-    height: 60pt;
+    font-size: 12pt;
+    width: 230px;
+    height: 25px;
+    border-radius: 10px 0 0 10px;
+    background-color: #D9D9D9;
   }
+
   .ChatSendForm {
-    font-size: 40pt;
-    width: 80%;
-    height: 60pt;
+    font-size: 12px;
+    width: 40px;
+    height: 30px;
+    border-radius: 0 10px 10px 0;
   }
