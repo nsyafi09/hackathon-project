@@ -8,7 +8,7 @@ function ShowItem() {
 
 
   const [state, setState] = useState({
-    item_id : 1167566, name : "Loading",price: "Loading",rating: "Loading",
+    item_id : "circle-y:10416641", name : "Loading",price: "Loading",rating: "Loading",
     discription: "Loading",
     images: [0],
   });
@@ -19,14 +19,14 @@ function ShowItem() {
   useEffect(() => {
       // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
       const access_db = async () => {
-          const response = await import("../../../server/APIrecollection/Apexlegends.json");
+          const response = await import("../JSON/Apexlegends.json");
           console.log(response)
           console.log(response.default.name)
           setState(
             (prevState) => (
               {
-                ...prevState, itemCode: response.default.itemCode,
-                itemName: response.default.itemName, price: response.default.price,
+                ...prevState, item_id: response.default.item_id,
+                name: response.default.name, price: response.default.price,
                 rating: response.default.rating,
                 discription: response.default.description,
                 images: response.default.images
