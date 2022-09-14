@@ -1,0 +1,37 @@
+{
+    "users" : 
+    [
+        {
+            "user_id":341234123,
+            "user_name":"Bob"
+        },
+        {
+            "user_id":341234144,
+            "user_name":"Mike"
+        },
+        {
+            "user_id":500,
+            "user_name":"Cobra"
+        },
+        {
+            "user_id":3412341466,
+            "user_name":"解体人形ジェニー"
+        },
+        {
+            "user_id":3412341467,
+            "user_name":"judgement-chain"
+        },
+        {
+            "user_id":3412341468,
+            "user_name":"NoName"
+        },
+        {
+            "user_id":3412341469,
+            "user_name":"TUBE-ｲﾅﾑﾗ"
+        },
+        {
+            "user_id":3412341470,
+            "user_name":"SuperSpark"
+        }
+    ]
+}

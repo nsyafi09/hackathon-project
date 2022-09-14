@@ -53,7 +53,7 @@ function Genre () {
           </div>
           </Link>
 
-          <Link to="/itempage">
+          <Link to="/itempage2">
           <div className="card 4">
             <div className="card_image">
               <img

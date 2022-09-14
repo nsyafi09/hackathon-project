@@ -1,4 +1,4 @@
-import './chatbox.css';
+import '../css/chatbox.css';
 import { useEffect, useState } from 'react';
 import getNowTime from '../Utils/Util';
 
@@ -18,7 +18,7 @@ function ChatBox() {
   useEffect(() => {
     // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
     const access_db = async () => {
-        const response = await import("./chat_data.json");
+        const response = await import("../pages/chat_data.json");
         //console.log(response)
         console.log(response.default['message-list'][0].user_id)
 
@@ -93,17 +93,20 @@ function ChatBox() {
     // HTML HERE
     return (
         <div className='chatbox-container'>
-    
+
+            <div className="chat-header">
+                <p>Live Chat</p>
+            </div>
             <div className="ChatBoxArea">
-                <div className='ChatMessageArea' id = "chat-scroll-area">
+                <div className='ChatMessageArea' id="chat-scroll-area">
                     {list}
                 </div>
                 <div className="ChatInputForm">
                     <div className="ChatInputTextForm">
-                    <input value={text}
-                        onChange={(event) => setText(event.target.value)} 
-                        minLength="2" maxLength="40" size="10" className='InputForm'>
-                    </input>
+                        <input value={text}
+                            onChange={(event) => setText(event.target.value)} 
+                            minLength="2" maxLength="40" size="10" className='InputForm'>
+                        </input>
                     </div>
                     <div className="ChatSendFormArea">
                         <button onClick={onClickSendText} className="ChatSendForm"> Send </button>
@@ -111,8 +114,8 @@ function ChatBox() {
                 </div>
             </div>
 
-            <div className="ChatInputForm">
-            </div>
+            {/* <div className="ChatInputForm">
+            </div> */}
         </div>
       );    
   }else{
