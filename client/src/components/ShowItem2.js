@@ -55,6 +55,9 @@ function ShowItem() {
         <p className='Item_price'> Price : {state.price ?? "loading"} </p>
         <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
         <p className='Item_description'>{state.discription ?? "loading"} </p>
+        <button className='item-url'>
+          <a href="/">Buy!</a>
+        </button>
       </div>
       
       {/* <a href="http://localhost:3000/anotherpage.html"> Link Test</a> */}
