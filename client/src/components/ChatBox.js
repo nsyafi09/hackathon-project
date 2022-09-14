@@ -1,4 +1,4 @@
-import './chatbox.css';
+import '../css/chatbox.css';
 import { useEffect, useState } from 'react';
 import getNowTime from '../Utils/Util';
 
@@ -18,7 +18,7 @@ function ChatBox() {
   useEffect(() => {
     // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
     const access_db = async () => {
-        const response = await import("./chat_data.json");
+        const response = await import("../pages/chat_data.json");
         //console.log(response)
         console.log(response.default['message-list'][0].user_id)
 

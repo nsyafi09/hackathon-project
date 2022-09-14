@@ -3,7 +3,7 @@
 import Navbar from '../components/Navbar';
 import ShowItem from '../components/ShowItem';
 import Footer from '../components/Footer';
-import ChatBox from './ChatBox';
+import ChatBox from '../components/ChatBox';
 
 
 function ItemPage() {
@@ -11,7 +11,7 @@ function ItemPage() {
     <div>
       <Navbar />
       <ShowItem/>
-      {/* <ChatBox/> */}
+      <ChatBox/>
       <Footer/>
     </div>
   );
