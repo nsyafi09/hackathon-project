@@ -1,23 +1,39 @@
 /* FOOTER */
+html {
+    margin: 0;
+    padding: 0;
+}
 
-
-.Footer {
-    background-color: aquamarine;
-    padding-bottom: 0;
-    background-color: dimgray;
-  }
-  
-  .App-footer {
+.ri-copyright {
     text-align: center;
-    color: white;
-  }
-  
-  .Footer-logo {
-    height: 10vmin;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
+    margin: 25px 0;
+    padding: 0;
+    
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
+.logo25 {
+    margin-top: 25px;
+    width: 180px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media all and (max-width: 500px) {
+    .footer {
+      font-size: 0.6rem;
+      margin: auto;
+    }
+    .logo25 {
+        margin-top: 10px;
+        width: 120px;
+    }
+}

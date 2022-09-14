@@ -1,0 +1,57 @@
+{
+  "chatrooms": [
+    {
+      "chatroom_id": "a",
+      "requested_date": "2022-9-12T17:51:55",
+      "message_list": [
+        {
+          "user_id": "user1",
+          "posted_date": "1995-12-17T03:24:00",
+          "message": "hoge"
+        },
+        {
+          "user_id": "user2",
+          "posted_date": "2022-9-12T17:50:15",
+          "message": "hello"
+        }
+      ]
+    },
+    {
+      "chatroom_id": "b",
+      "requested_date": "2022-9-12T18:6:28",
+      "message_list": [
+        {
+          "user_id": "user2",
+          "posted_date": "2022-9-12T17:50:27",
+          "message": "hello"
+        },
+        {
+          "user_id": "user3",
+          "posted_date": "2022-9-12T17:51:36",
+          "message": "hello"
+        },
+        {
+          "user_id": "user1",
+          "posted_date": "2022-9-12T18:5:33",
+          "message": "hi"
+        },
+        {
+          "user_id": "user2",
+          "posted_date": "2022-9-12T18:6:59",
+          "message": "hiromu"
+        }
+      ]
+    },
+    {
+      "chatroom_id": "c",
+      "requested_date": "",
+      "message_list": [
+        {
+          "user_id": "user3",
+          "posted_date": "2022-9-12T17:52:36",
+          "message": "hello"
+        }
+      ]
+    }
+  ]
+}

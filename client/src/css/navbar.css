@@ -1,7 +1,8 @@
 /* Header: NAVBAR */
 .logo {
+  margin-top: 10px;
     padding-left: 1rem;
-    width: 5rem;
+    width: 7rem;
     cursor: pointer;
   }
   

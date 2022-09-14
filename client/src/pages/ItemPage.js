@@ -3,14 +3,16 @@
 import Navbar from '../components/Navbar';
 import ShowItem from '../components/ShowItem';
 import Footer from '../components/Footer';
+import ChatBox from './ChatBox';
+
 
 function ItemPage() {
   return (
-    <body>
+    <div>
       <Navbar />
       <ShowItem/>
       <Footer/>
-    </body>
+    </div>
   );
 }
 
