@@ -2,6 +2,14 @@ const db = require("./db_utils.js")
 var con = db.connect_db()
 console.log("connected");
 
+var {PythonShell} = require('python-shell');
+var pyshell = new PythonShell('./getAPIcode.py');
+
+pyshell.send("ezaki-g:10225380");
+pyshell.on('message', function (data) {
+    console.log(data);
+});
+
 const fs = require("fs")
 
 var temp_users = require("./temp.json").users
@@ -26,3 +34,14 @@ for(var i=0; i<temp_users.length; i++){
         }
     )
 }
+<<<<<<< Updated upstream
+=======
+*/
+
+var table = "14314312"
+db.create_table(table).then(res => {
+    db.get_messages(table).then(res2 =>{
+        console.log(res2)
+    })
+})
+>>>>>>> Stashed changes
