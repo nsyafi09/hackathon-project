@@ -1,5 +1,5 @@
 {
-  "name": "chatroom_server",
+  "name": "item_chat_API",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
