@@ -51,10 +51,18 @@ function ShowItem() {
         <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
       </div>
       <div className="item-details">
-        <p className='Item_name'>{state.name ?? "loading"} </p>
+        <h1 className='Item_name'>{state.name ?? "loading"} </h1>
         <p className='Item_price'> Price : {state.price ?? "loading"} </p>
         <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
         <p className='Item_description'>{state.discription ?? "loading"} </p>
+        <button className='item-url'>
+          <a href="/">Buy <span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+</svg>
+</span>
+          </a>
+        </button>
       </div>
       
       {/* <a href="http://localhost:3000/anotherpage.html"> Link Test</a> */}
