@@ -102,7 +102,7 @@ function ChatBox() {
                     <div className="ChatInputTextForm">
                     <input value={text}
                         onChange={(event) => setText(event.target.value)} 
-                        minlength="2" maxlength="40" size="10" className='InputForm'>
+                        minLength="2" maxLength="40" size="10" className='InputForm'>
                     </input>
                     </div>
                     <div className="ChatSendFormArea">

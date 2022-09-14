@@ -46,17 +46,19 @@ function ShowItem() {
   console.log(`${process.env.PUBLIC_URL}` + `${state.image1}`)
 
   return (
-    <div className="ItemArea">
-      <p className="ItemPIC">
+    <section className="item-container">
+      <div className="item-picture">
         <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
-      </p>
-      <p className='Item_name'>{state.name ?? "loading"} </p>
-      <p className='Item_price'> Price : {state.price ?? "loading"} </p>
-      <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
-      <p className='Item_description'>{state.discription ?? "loading"} </p>
+      </div>
+      <div className="item-details">
+        <p className='Item_name'>{state.name ?? "loading"} </p>
+        <p className='Item_price'> Price : {state.price ?? "loading"} </p>
+        <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
+        <p className='Item_description'>{state.discription ?? "loading"} </p>
+      </div>
       
       {/* <a href="http://localhost:3000/anotherpage.html"> Link Test</a> */}
-    </div>
+    </section>
   );
 }
 

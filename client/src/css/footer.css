@@ -1,5 +1,8 @@
 /* FOOTER */
-
+html {
+    margin: 0;
+    padding: 0;
+}
 
 .ri-copyright {
     text-align: center;
@@ -22,4 +25,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media all and (max-width: 500px) {
+    .footer {
+      font-size: 0.6rem;
+      margin: auto;
+    }
+    .logo25 {
+        margin-top: 10px;
+        width: 120px;
+    }
 }

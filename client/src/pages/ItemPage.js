@@ -8,11 +8,11 @@ import ChatBox from './ChatBox';
 
 function ItemPage() {
   return (
-    <body>
+    <div>
       <Navbar />
       <ShowItem/>
       <Footer/>
-    </body>
+    </div>
   );
 }
 

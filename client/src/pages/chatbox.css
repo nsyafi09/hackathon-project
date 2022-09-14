@@ -1,7 +1,8 @@
-  .chatbox-container {
-    width: 400px;
-    height: 200px;
-  }
+  /* .chatbox-container {
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
+  } */
 
   .ChatBoxArea {
     background-color: #d4e9f2;
@@ -18,7 +19,7 @@
   .EachMSG {
     width: 70%;
     word-wrap: break-word;
-    font-size: 30pt;
+    font-size: 2rem;
     background-color: rgb(214, 150, 150);
     text-align: left;
     margin-left: 5%;
