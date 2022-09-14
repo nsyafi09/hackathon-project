@@ -1,18 +1,15 @@
 import React from 'react';
 // Importing genre CSS
 import '../css/footer.css'
-import logo from './images/logo/rakuten-logo.png'
+import logo25 from './images/logo/logo_25th.png'
 
 
 function Footer() {
     return (
-      <div className="Footer">
-        <footer className="App-footer">
-          <img src={logo} className="Footer-logo"/>
-          <p>
-            All rights reserved
-          </p>
-        </footer>
+      <div className="footer">
+        <img src={logo25} className="logo25"
+        />
+        <p className="ri-copyright"><font size="-1"> © Rakuten Group, Inc.</font></p>
       </div>
     );
   }

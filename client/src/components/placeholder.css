@@ -1,0 +1,33 @@
+.ItemArea {
+  background-color: crimson;
+  font-size: 40pt;
+}
+
+.ItemPIC {
+  margin-top: 0;
+  margin-bottom: 0%;
+}
+  
+.Item_name {
+  background-color: #FFF;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.Item_price {
+  background-color: #FFF;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.Item_rating {
+  background-color: #FFF;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.Item_description {
+  background-color: #FFF;
+  margin-left: 10%;
+  margin-right: 10%;
+}

@@ -1,19 +1,18 @@
 // import logo from './logo.svg';
 // import './App.css';
 import Navbar from '../components/Navbar';
-import ShowItem from '../components/ShowItem';
 import Footer from '../components/Footer';
 import ChatBox from './ChatBox';
 
 
-function ItemPage() {
+function ChatPage() {
   return (
     <body>
       <Navbar />
-      <ShowItem/>
+      <ChatBox/>
       <Footer/>
     </body>
   );
 }
 
-export default ItemPage;
+export default ChatPage;

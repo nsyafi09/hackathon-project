@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 function MainPage() {
   return (
-    <body>
+    <div>
         <header>
             <Navbar />
         </header>
@@ -13,7 +13,7 @@ function MainPage() {
         {/* <App /> */}
         <Genre />
         <Footer />
-    </body>
+    </div>
   );
 }
 

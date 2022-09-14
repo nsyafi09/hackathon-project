@@ -1,4 +1,4 @@
-import '../css/showitem.css';
+import './placeholder.css';
 import { useEffect, useState } from 'react';
 
 
@@ -10,7 +10,7 @@ function ShowItem() {
   const [state, setState] = useState({
     item_id : 1167566, name : "Loading",price: "Loading",rating: "Loading",
     discription: "Loading",
-    image1: "NoImage",image2: "NoImage",image3: "NoImage",image4: "NoImage",
+    images: [0],
   });
 
   // CAll API HERE
@@ -28,14 +28,18 @@ function ShowItem() {
                 ...prevState, item_id: response.default.item_id,
                 name: response.default.name, price: response.default.price,
                 rating: response.default.rating,
-                image1: response.default.images.pic1,image2: response.default.images.pic2,
-                image3: response.default.images.pic3,image4: response.default.images.pic4
+                discription: response.default.description,
+                images: response.default.images
               }
             )
           ); // stateに反映する
       };
       access_db(); 
   }, []);
+
+  // TODO
+  // - make css to align info like Figma
+  // - prepare codes that proccess rating star rendering
 
 
   console.log(state)
@@ -44,12 +48,14 @@ function ShowItem() {
   return (
     <div className="ItemArea">
       <p className="ItemPIC">
-        <img src={`${process.env.PUBLIC_URL}` + `${state.image1}`}/>
+        <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
       </p>
-      <p className='name'> Name : {state.name ?? "loading"} </p>
-      <p className='price'> Price : {state.price ?? "loading"} </p>
-      <p className='rating'> Rating : {state.rating ?? "loading"} </p>
-      <p className='description'> Discription : {state.discription ?? "loading"} </p>      
+      <p className='Item_name'>{state.name ?? "loading"} </p>
+      <p className='Item_price'> Price : {state.price ?? "loading"} </p>
+      <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
+      <p className='Item_description'>{state.discription ?? "loading"} </p>
+      
+      {/* <a href="http://localhost:3000/anotherpage.html"> Link Test</a> */}
     </div>
   );
 }
