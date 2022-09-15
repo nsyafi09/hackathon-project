@@ -1,0 +1,6 @@
+
+@media all and (min-width: 500px) {
+    .tabs-container {
+        display: none;
+    }    
+}

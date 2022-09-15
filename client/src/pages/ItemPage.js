@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
-// import './App.css';
+import './disappear.css';
 import Navbar from '../components/Navbar';
 import ShowItem from '../components/ShowItem';
 import Footer from '../components/Footer';
 import ChatBox from '../components/ChatBox';
+import Tabs from '../components/Tabs';
 
 
 function ItemPage() {
@@ -12,8 +13,11 @@ function ItemPage() {
       <header>
         <Navbar />
       </header>
+      <div className='disapear-mobile'>
       <ShowItem/>
       <ChatBox/>
+      </div>
+      <Tabs/>
       <Footer/>
     </div>
   );

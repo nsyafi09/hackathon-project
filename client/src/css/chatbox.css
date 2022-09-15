@@ -38,6 +38,9 @@
     margin: 10px auto;
     /* display: inline; */
     position: static;
+
+    /* For the tabs */
+    display: none;
   }
 }
 
@@ -71,6 +74,11 @@
     .collapsible-chat.expanded {
       display: block;
       position: static;
+    }
+
+    /* For the Tabs */
+    .collapsible-chat{
+      display: block;
     }
   }
 
