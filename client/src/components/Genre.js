@@ -20,7 +20,7 @@ function Genre () {
         
         <div className="cards-list">
 
-          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
+          <Link to="/itempage" state={{item_id : "bbtown:10047318"}}>
             <div className="card 1">
               <div className="card_image">
                 <img
