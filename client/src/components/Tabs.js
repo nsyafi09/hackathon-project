@@ -102,7 +102,7 @@ function Tabs() {
           <ShowItem item_id = {item_id}/>
         </Tab>
         <Tab label="Chat">
-          <ChatBox item_id = {item_id} user_id = "500" user_name = {"Cobra"}/>
+        <ChatBox item_id = {item_id} user_id = "3412341469" user_name = {"TUBE-ｲﾅﾑﾗ"}/>
         </Tab>
       </Tabs>
     </div>
