@@ -33,7 +33,7 @@ function Genre () {
             </div>
           </Link>
 
-          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
+          <Link to="/itempage" state={{item_id : "leather-g:10001232"}}>
             <div className="card 2">
               <div className="card_image">
                 <img
@@ -46,7 +46,7 @@ function Genre () {
             </div>
           </Link>
           
-          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
+          <Link to="/itempage" state={{item_id : "adidas:10150617"}}>
             <div className="card 3">
               <div className="card_image">
                 <img
@@ -61,7 +61,7 @@ function Genre () {
 
 
 
-          <Link to="/itempage2">
+          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
             <div className="card 4">
               <div className="card_image">
                 <img

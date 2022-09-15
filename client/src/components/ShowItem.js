@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 
 function ShowItem(props) {
-  // const item_id = props.item_id
-  const item_id = "ezaki-g:10225380"
+  const item_id = props.item_id
+  // const item_id = "ezaki-g:10225380"
   console.log("__dirname")
   console.log(__filename)
 
@@ -36,7 +36,7 @@ function ShowItem(props) {
           name: response.name, price: response.price,
           discription: response.description,
           images: response.images,
-          url: response.url
+          url: response.item_url
         }
       ); // set state for re-render
       };
@@ -54,9 +54,9 @@ function ShowItem(props) {
   return (
     <section className="item-container">
       <div className="item-picture">
-        {/* <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/> */}
+        <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
         {/* Placeholder */}
-        <img src="https://shop.r10s.jp/ezaki-g/cabinet/220602-1/epmxft-ut-01.jpg"></img>
+        {/* <img src="https://shop.r10s.jp/ezaki-g/cabinet/220602-1/epmxft-ut-01.jpg"></img> */}
       </div>
       <div className="item-details">
         <h1 className='Item_name'>{state.name ?? "loading"} </h1>
@@ -64,7 +64,7 @@ function ShowItem(props) {
         {/* <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p> */}
         <p className='Item_description'>{state.discription ?? "loading"} </p>
         <button className='item-url'>
-          <a href={state.url}>Buy <span>
+          <a target="_blank" href={state.url}>Buy <span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
           </svg>
