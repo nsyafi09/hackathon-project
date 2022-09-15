@@ -24,7 +24,7 @@ function ShowItem(props) {
         const requestOptions ={
           method: 'GET'
         };
-      const url = "http://herozxzx.aa0.netvolante.jp:3001/get_item/" + item_id
+      const url = "/api:3001/get_item/" + item_id
       const response_raw = await fetch(url,requestOptions); // External API
       const response = await response_raw.json();
       // const response = await import("../item_data_full.json");

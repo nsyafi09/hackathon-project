@@ -27,7 +27,7 @@ function ChatBox(props) {
           method: 'GET'
         };
       // const url = "http://localhost:3304/message-list";
-      const url = "http://herozxzx.aa0.netvolante.jp:3001/get_message_list/" + item_id
+      const url = "/api:3001/get_message_list/" + item_id
       const response = await fetch(url,requestOptions); // External API
       const json = await response.json();
       console.log("GET Message Responce (Initial) is ");
@@ -51,7 +51,7 @@ function ChatBox(props) {
       const requestOptions ={
             method: 'GET'
           };
-      const url = "http://herozxzx.aa0.netvolante.jp:3001/get_message_list/" + item_id
+      const url = "/api:3001/get_message_list/" + item_id
       const get_message_list = async () => {
         const res = await fetch(url,requestOptions); // External API
         const json = await res.json();
@@ -99,7 +99,7 @@ function ChatBox(props) {
                 //`user_id=${my_user_id}&user_name=${my_user_name}&
                 //user_icon="NoImage"&date=${now_date}&message=${text}`
             };
-            const url = "http://herozxzx.aa0.netvolante.jp:3001/send_message/"
+            const url = "/api:3001/send_message/"
             //const url = "http://localhost:3304/message-list";
             const res = await fetch(url,requestOptions); // External API
             console.log(res);
