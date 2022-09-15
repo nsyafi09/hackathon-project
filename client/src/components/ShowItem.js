@@ -10,7 +10,7 @@ function ShowItem(props) {
 
   const [state, setState] = useState({
     item_id : 1167566, name : "Loading",price: "Loading",
-    discription: "Loading",
+    discription: "Loading", url: "Loading",
     images: [0],
   });
 
@@ -33,17 +33,18 @@ function ShowItem(props) {
           item_id: response.item_id,
           name: response.name, price: response.price,
           discription: response.description,
-          images: response.images
+          images: response.images,
+          url: response.url
         }
       ); // set state for re-render
+      console.log("ShowItemPage:: This is image list!")
+      console.log(response.images);
       };
       access_db(); 
   }, []);
 
   // TODO
-  // - make css to align info like Figma
-  // - prepare codes that proccess rating star rendering
-
+  // make list of images that will be shown
 
   console.log(state)
   console.log(`${process.env.PUBLIC_URL}` + `${state.image1}`)

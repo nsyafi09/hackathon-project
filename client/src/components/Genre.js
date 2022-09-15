@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import '../css/genre.css'
+import { useEffect, useState } from 'react';
 
 
 
@@ -10,6 +11,40 @@ function Genre () {
 
     const Searchword4Game1 = "Splatoon"
     const Searchword4Sport1 = "Splatoon"
+    const keyword = ["BasketBall","eSport","Splatoon","Soccer"]
+
+
+    const [state, setState] = useState([]);
+
+    /*
+    // CAll API HERE
+    // Ref : https://qiita.com/apollo_program/items/01fa3c4621155f64f930
+    useEffect(() => {
+        // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
+        var i=0;
+        for (i ; i<keyword.length();i++){
+          const access_db = async () => {
+            const requestOptions ={
+              method: 'GET'
+            };
+          const url = "http://herozxzx.aa0.netvolante.jp:3001/get_item_list/" + keyword[i]
+          const response_raw = await fetch(url,requestOptions); // External API
+          const response = await response_raw.json();
+          // const response = await import("../item_data_full.json");
+          console.log("GET Item List Response is");
+          console.log(response_raw);
+          setState([]); // set state for re-render
+          console.log("GenrePage:: Item is list!")
+          console.log(response.images);
+          };
+          access_db(); 
+        }
+    }, []);
+    */
+    
+    const ItemI4BasketBall = "spotaka:10208561"
+    const ItemI4eSport = ""
+    const ItemI4e = ""
 
     return (
       <section className="cards-section">
@@ -28,7 +63,7 @@ function Genre () {
                 />
               </div>
               <div className="card_title title-white">
-                <p>Basketball</p>
+                <p>BasketBall</p>
               </div>
             </div>
           </Link>

@@ -25,7 +25,7 @@ function ItemPage() {
   return (
     <div>
       <Navbar />
-      <ChatBox item_id = "14314312" user_id = "341234123" user_name = {"SMITH"}/>
+      <ChatBox item_id ={item_id} user_id = "341234123" user_name = {"SMITH"}/>
       <ShowItem item_id = {item_id}/>
       <Footer/>
     </div>
