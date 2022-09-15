@@ -12,7 +12,7 @@ function ShowItem(props) {
 
   const [state, setState] = useState({
     item_id : 1167566, name : "Loading",price: "Loading",
-    discription: "Loading",
+    discription: "Loading", url: "Loading",
     images: [0],
   });
 
@@ -35,7 +35,8 @@ function ShowItem(props) {
           item_id: response.item_id,
           name: response.name, price: response.price,
           discription: response.description,
-          images: response.images
+          images: response.images,
+          url: response.url
         }
       ); // set state for re-render
       };
