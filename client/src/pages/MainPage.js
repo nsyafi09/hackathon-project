@@ -1,7 +1,9 @@
 import Navbar from '../components/Navbar';
-import Showcase from '../components/Showcase';
+import HeroArea from '../components/HeroArea';
 import Genre from '../components/Genre';
 import Footer from '../components/Footer';
+
+// Showcase page as a Main page
 
 function MainPage() {
   return (
@@ -9,7 +11,7 @@ function MainPage() {
         <header>
             <Navbar />
         </header>
-        <Showcase />
+        <HeroArea />
         {/* <App /> */}
         <Genre />
         <Footer />

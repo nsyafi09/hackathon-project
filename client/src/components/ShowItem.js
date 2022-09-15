@@ -48,14 +48,12 @@ function ShowItem(props) {
   return (
     <div className="ItemArea">
       <p className="ItemPIC">
-        <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
+        <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`} className="TheItemPIC"/>
       </p>
       <p className='Item_name'>{state.name ?? "loading"} </p>
       <p className='Item_price'> Price : {state.price ?? "loading"} </p>
       <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
       <p className='Item_description'>{state.discription ?? "loading"} </p>
-      
-      <a href="http://localhost:3000/anotherpage.html"> Link Test</a>
     </div>
   );
 }

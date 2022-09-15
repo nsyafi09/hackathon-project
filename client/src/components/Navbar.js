@@ -14,9 +14,7 @@ function Navbar() {
         <div>
         <ul>
             {/* <!-- List for links on navbar --> */}
-            <li><a href="">LINK 1</a></li>
-            <li><a href="">LINK 2</a></li>
-            <li><a href="">LINK 3</a></li>
+            <li><a href="">Rakuten</a></li>
         </ul>
         </div>
     </nav>

@@ -39,9 +39,9 @@
 
 /* CHAT AREA */
   .ChatBoxArea {
-    border-radius: 5px;
-    width: 275px;
-    margin-left: 10px;
+    background-color: #d4e9f2;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
   
   .ChatMessageArea {
@@ -51,6 +51,7 @@
     width:inherit;
     border-radius: 5px;
     height:320px;
+    border: solid 5px #000000;/*線*/
   }
   
   .EachMSG {

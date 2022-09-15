@@ -3,7 +3,7 @@ import React from 'react';
 import '../css/showcase.css'
 
 
-function Showcase() {
+function HeroArea() {
     return(
         <section className="hero-container">
             <div className="hero-wrapper">
@@ -32,4 +32,4 @@ function Showcase() {
     )
 }
 
-export default Showcase
+export default HeroArea
