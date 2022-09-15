@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+// import { render } from "react-dom";
 import ChatBox from "./ChatBox";
 import ShowItem from "./ShowItem";
 import "./tabs.css"
@@ -89,7 +89,7 @@ function Tabs() {
             <ShowItem/>
         </Tab>
         <Tab label="Chat">
-            <ChatBox/>
+          <ChatBox item_id = "14314312" user_id = "341234123" user_name = {"SMITH"}/>
         </Tab>
       </Tabs>
     </div>
