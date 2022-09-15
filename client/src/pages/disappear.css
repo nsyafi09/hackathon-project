@@ -1,0 +1,7 @@
+
+/* To dissapear in Mobile */
+@media all and (max-width: 500px) {
+    .disapear-mobile {
+        display: none;
+    }
+  }

@@ -24,6 +24,11 @@
     object-fit: cover;
 }
 
+.hero-section a {
+  width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
 
 .product-details {
   padding-left: 20px;
