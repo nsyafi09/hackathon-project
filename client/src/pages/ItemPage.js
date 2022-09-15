@@ -5,6 +5,7 @@ import ShowItem from '../components/ShowItem';
 import Footer from '../components/Footer';
 import ChatBox from '../components/ChatBox';
 import Tabs from '../components/Tabs';
+import PlaceHolder from '../components/placeholder';
 
 
 function ItemPage() {
@@ -15,7 +16,7 @@ function ItemPage() {
       </header>
       <div className='disapear-mobile'>
       <ShowItem/>
-      <ChatBox/>
+      <ChatBox item_id = "14314312" user_id = "341234123" user_name = {"SMITH"}/>
       </div>
       <Tabs/>
       <Footer/>
