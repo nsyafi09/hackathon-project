@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<MainPage/>} />
-        <Route path="/itempage" element={<ItemPage item_id = "this_is_item_id"/>} />
+        <Route path="/itempage" element={<ItemPage/>} />
         <Route path="/chatpage" element={<ChatPage/>} />
       </Routes>
    </Router>
