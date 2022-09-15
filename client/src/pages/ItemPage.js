@@ -15,10 +15,11 @@ function ItemPage(props) {
     <div>
       <Navbar />
       <ShowItem item_id = {item_id}/>
-      <ChatBox item_id = "14314312" user_id = {341234166} user_name = {"SMITH"}/>
+      
       <Footer/>
     </div>
   );
 }
+//<ChatBox item_id = "14314312" user_id = {341234166} user_name = {"SMITH"}/>
 
 export default ItemPage;
