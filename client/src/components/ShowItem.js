@@ -29,7 +29,8 @@ function ShowItem() {
                 name: response.default.name, price: response.default.price,
                 rating: response.default.rating,
                 discription: response.default.description,
-                images: response.default.images
+                images: response.default.images,
+                url: response.default.url
               }
             )
           ); // stateに反映する
@@ -56,7 +57,7 @@ function ShowItem() {
         <p className='Item_rating'> Rating : {state.rating ?? "loading"} </p>
         <p className='Item_description'>{state.discription ?? "loading"} </p>
         <button className='item-url'>
-          <a href="/">Buy <span>
+          <a href={state.url}>Buy <span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
 </svg>

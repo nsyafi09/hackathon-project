@@ -48,7 +48,7 @@ function ShowItem() {
   return (
     <section className="item-container">
       <div className="item-picture">
-        <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
+        <img src={`${process.env.PUBLIC_URL}` + `${state.images[1]}`}/>
       </div>
       <div className="item-details">
         <p className='Item_name'>{state.name ?? "loading"} </p>
