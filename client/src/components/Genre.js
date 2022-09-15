@@ -14,7 +14,7 @@ function Genre () {
         
         <div className="cards-list">
 
-        <Link to="/itempage">
+        <Link to="/itempage" item_id = "ezaki-g:10225380">
           <div className="card 1">
             <div className="card_image">
               <img
@@ -23,6 +23,19 @@ function Genre () {
             </div>
             <div className="card_title title-white">
               <p>Basketball</p>
+            </div>
+          </div>
+          </Link>
+
+          <Link to="/itempage" item_id = "ezaki-g:10225380">
+          <div className="card 3">
+            <div className="card_image">
+              <img
+                src="https://img.olympicchannel.com/images/image/private/t_16-9_3200/primary/pwmyxhud4bfauldamlhb"
+              />
+            </div>
+            <div className="card_title title-white">
+              <p>Baseball</p>``
             </div>
           </div>
           </Link>
@@ -40,18 +53,7 @@ function Genre () {
           </div>
           </Link>
 
-          <Link to="/itempage">
-          <div className="card 3">
-            <div className="card_image">
-              <img
-                src="https://img.olympicchannel.com/images/image/private/t_16-9_3200/primary/pwmyxhud4bfauldamlhb"
-              />
-            </div>
-            <div className="card_title title-white">
-              <p>Baseball</p>
-            </div>
-          </div>
-          </Link>
+
 
           <Link to="/itempage2">
           <div className="card 4">

@@ -19,18 +19,22 @@ function ChatBox(props) {
     // useEffect自体ではasyncの関数を受け取れないので内部で関数を定義して呼び出す。
     const access_get = async () => {
         const requestOptions ={
-            method: 'GET',
+            method: 'GET'
           };
-        const url = "http://localhost:3304/message-list";
+        // const url = "http://localhost:3304/message-list";
+        const url = "http://herozxzx.aa0.netvolante.jp:3001/get_message_list/" + item_id
         const response = await fetch(url,requestOptions); // External API
         const json = await response.json();
+        console.log("GET Message Responce (Initial) is ");
+        console.log(response);
         console.log(json);
+        console.log(json['message_list']);
         //const response = await import("./chat_data.json"); // Internal Json
         //console.log(response.default['message-list'][0].user_id);
 
         setState(
             // response.default['message-list']
-            json
+            json['message_list']
         ); // stateに反映する
         setScroll(json);
     };
@@ -44,14 +48,14 @@ function ChatBox(props) {
       const requestOptions ={
             method: 'GET'
           };
-      const url = "http://localhost:3304/message-list";
+      const url = "http://herozxzx.aa0.netvolante.jp:3001/get_message_list/" + item_id
       const get_message_list = async () => {
         const res = await fetch(url,requestOptions); // External API
         const json = await res.json();
         console.log(res);
         console.log(json);
         setState(
-            json// The API returns single elem Array. Why...?
+            json['message_list'] // The API returns single elem Array. Why...?
           ); // stateに反映する   
       };
       get_message_list();
@@ -84,14 +88,15 @@ function ChatBox(props) {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    user_id : my_user_id, user_name : my_user_name,
-                    user_icon : "NoImage", date : now_date,
+                    item_id : item_id,
+                    user_id : my_user_id,
                     message : text,
                 })
                 //`user_id=${my_user_id}&user_name=${my_user_name}&
                 //user_icon="NoImage"&date=${now_date}&message=${text}`
             };
-            const url = "http://localhost:3304/message-list";
+            const url = "http://herozxzx.aa0.netvolante.jp:3001/send_message/"
+            //const url = "http://localhost:3304/message-list";
             const res = await fetch(url,requestOptions); // External API
             console.log(res);
             console.log(JSON.stringify(messageInfo));    

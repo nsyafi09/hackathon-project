@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import '../App-fromRiku.css';
 
 function ShowItem(props) {
-  //const item_id = props.item_id
-  const item_id = "ezaki-g:10225380"
+  const item_id = props.item_id
+  //const item_id = "ezaki-g:10225380"
   console.log("__dirname")
   console.log(__filename)
 
@@ -23,11 +23,10 @@ function ShowItem(props) {
           method: 'GET'
         };
       const url = "http://herozxzx.aa0.netvolante.jp:3001/get_item/" + item_id
-      console.log(url)
       const response_raw = await fetch(url,requestOptions); // External API
       const response = await response_raw.json();
       // const response = await import("../item_data_full.json");
-      console.log("response is");
+      console.log("GET Item Response is");
       console.log(response_raw);
       setState(
         {
