@@ -33,7 +33,7 @@ function Genre () {
             </div>
           </Link>
 
-          <Link to="/itempage" item_id = "ezaki-g:10225380">
+          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
             <div className="card 3">
               <div className="card_image">
                 <img
