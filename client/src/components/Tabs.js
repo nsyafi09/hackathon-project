@@ -81,17 +81,17 @@ function Tabs() {
   // I would do this but not worth the conversation for this demo :P
   //const Tab = ({ children }) => <React.Fragment>{children}</React.Fragment>;
 
-  // var item_id = "";
-  // try { // catch if user reach this page without state like direct URL link
-  //   const location = useLocation();
-  //   item_id = location.state.item_id
-  //   console.log("This is Item ID got from Genere page!")
-  //   console.log(item_id.item_id)
-  // } catch (error){
-  //   item_id = "ezaki-g:10225380"
-  //   console.log("An unexpected page access! It displys default items")
-  //   console.log(item_id)
-  // }
+  var item_id = "";
+  try { // catch if user reach this page without state like direct URL link
+    const location = useLocation();
+    item_id = location.state.item_id
+    console.log("This is Item ID got from Genere page!")
+    console.log(item_id.item_id)
+  } catch (error){
+    item_id = "ezaki-g:10225380"
+    console.log("An unexpected page access! It displys default items")
+    console.log(item_id)
+  }
   
   return(
     <div className="tabs-container">
@@ -99,10 +99,10 @@ function Tabs() {
   
       <Tabs defaultIndex={0}>
         <Tab label="Item">
-          <ShowItem />
+          <ShowItem item_id = {item_id}/>
         </Tab>
         <Tab label="Chat">
-          <ChatBox item_id = "14314312" user_id = "341234123" user_name = {"SMITH"}/>
+          <ChatBox item_id = {item_id} user_id = "341234123" user_name = {"SMITH"}/>
         </Tab>
       </Tabs>
     </div>
