@@ -17,6 +17,8 @@ var temp_users = require("./temp.json").users
 var user_icon_img = fs.readFileSync('../user_icon_test.png')
 var user_icon_blob = "0x" + Buffer.from(user_icon_img).toString('hex')
 
+/*
+//test
 db.search_user("500").then(user_info =>{
     if(user_info != null){
         console.log(user_info)
@@ -26,6 +28,7 @@ db.search_user("500").then(user_info =>{
     }
 })
 
+//Adding users to db(users in temp.json)
 for(var i=0; i<temp_users.length; i++){
     //console.log(temp_users[i].user_id)
     db.insert_user(temp_users[i].user_id, temp_users[i].user_name, user_icon_blob).then(
@@ -34,8 +37,6 @@ for(var i=0; i<temp_users.length; i++){
         }
     )
 }
-<<<<<<< Updated upstream
-=======
 */
 
 var table = "14314312"
@@ -44,4 +45,3 @@ db.create_table(table).then(res => {
         console.log(res2)
     })
 })
->>>>>>> Stashed changes
