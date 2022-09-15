@@ -27,8 +27,8 @@ function ItemPage() {
         <Navbar />
       </header>
       <div className='disapear-mobile'>
-      <ShowItem item_id = {item_id}/>
-      <ChatBox item_id = "14314312" user_id = "341234123" user_name = {"SMITH"}/>
+        <ShowItem item_id = {item_id}/>
+        <ChatBox item_id = {item_id} user_id = "341234123" user_name = {"SMITH"}/>
       </div>
       <Tabs/>
       <Footer/>
