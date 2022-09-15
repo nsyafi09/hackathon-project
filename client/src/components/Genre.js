@@ -61,7 +61,7 @@ function Genre () {
 
 
 
-          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
+          <Link to="/itempage" state={{item_id : "book:20655233"}}>
             <div className="card 4">
               <div className="card_image">
                 <img
