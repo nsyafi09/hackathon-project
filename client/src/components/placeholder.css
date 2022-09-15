@@ -30,14 +30,16 @@
  
 .item-details {
   /* border-bottom: 1px solid #E1E8EE; */
-  max-width: 350px;
+  max-width: 20vw;
+  max-height: 60vh;
   margin-bottom: 20px;
   margin-right: auto;
+  overflow-y: auto;
 } 
 
 .item-details h1 {
   font-weight: 300;
-  font-size: 52px;
+  font-size: 3rem;
   color: #43484D;
   letter-spacing: -2px;
 
@@ -48,12 +50,18 @@
 }
 
 .item-details p {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 300;
   color: #86939E;
   margin-bottom: 35px;
   line-height: 2rem;
   border-bottom: 1px solid #E1E8EE;
+}
+
+/* FOR OVERFLOW ISSUE */
+.Item_description {
+  overflow-y: auto;
+  max-height: 20vh;
 }
 
 .item-url {
