@@ -5,17 +5,29 @@ import ShowItem from '../components/ShowItem';
 import Footer from '../components/Footer';
 import ChatBox from '../components/ChatBox';
 import Tabs from '../components/Tabs';
-import PlaceHolder from '../components/placeholder';
+import { useLocation } from 'react-router-dom';
 
 
 function ItemPage() {
+  var item_id = "";
+  try { // catch if user reach this page without state like direct URL link
+    const location = useLocation();
+    item_id = location.state.item_id
+    console.log("This is Item ID got from Genere page!")
+    console.log(item_id.item_id)
+  } catch (error){
+    item_id = "ezaki-g:10225380"
+    console.log("An unexpected page access! It displys default items")
+    console.log(item_id)
+  }
+
   return (
     <div>
       <header>
         <Navbar />
       </header>
       <div className='disapear-mobile'>
-      <ShowItem/>
+      <ShowItem item_id = {item_id}/>
       <ChatBox item_id = "14314312" user_id = "341234123" user_name = {"SMITH"}/>
       </div>
       <Tabs/>
