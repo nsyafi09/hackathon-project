@@ -10,6 +10,8 @@ var get_api_items = new PythonShell('./scripts/getAPI.py');
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3001
+const cors = require("cors")
+app.use(cors())
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,29 +20,11 @@ app.use(bodyParser.json());
 var fs = require('fs');
 const path = require("path");
 const joi = require("Joi");
-<<<<<<< Updated upstream
-
-var chat = {"chatrooms":[{
-                "item_id": "a",
-                "message_count": 1,
-                "date": "",
-                "message_list":[
-                {
-                    "user_id": "0001",
-                    "user_name": "user1",
-                    "user_icon": "NoImage",
-                    "date": "19951217032400",
-                    "message": "hoge"
-                }
-                ]}
-            ]};
-=======
 const { get } = require("http");
 const { rejects } = require("assert");
 const { resolve } = require("path");
 
 var chat = read_local("../chat.json")
->>>>>>> Stashed changes
 
 // Check responce
 app.get('/', (req, res) => {
@@ -62,7 +46,7 @@ app.get("/get_item/:item_id", (req, res) => {
                 res.json(item);
             }
             else{
-                res.status(400)
+                res.status(404)
                 res.json({"Error": ["bad request"]});
             }
         })
@@ -89,7 +73,7 @@ app.get("/get_item_list/:keyword", (req, res) => {
                 res.json(item);
             }
             else{
-                res.status(400)
+                res.status(404)
                 res.json({"Error": ["bad request"]});
             }
         })
@@ -101,14 +85,6 @@ app.get("/get_item_list/:keyword", (req, res) => {
     }
 });
 
-<<<<<<< Updated upstream
-app.get("/get_message_list/:item_id", (req, res) => {
-    var id = req.params.item_id
-    console.log(id)
-    res.json( get_chat(id) );
-})
-
-=======
 // [GET] sending message_list
 app.get("/get_message_list/:item_id", (req, res) => {
     var id = req.params.item_id
@@ -125,8 +101,8 @@ app.get("/get_message_list/:item_id", (req, res) => {
                 res.json(ret_chats);
             }
             else{
-                res.status(400)
-                res.json({"Error": ["bad request"]});
+                res.status(404)
+                res.json({"Error": ["unknown user_id"]});
             } 
         })
     }
@@ -138,7 +114,6 @@ app.get("/get_message_list/:item_id", (req, res) => {
 });
 
 // [POST] getting user's message
->>>>>>> Stashed changes
 app.post('/send_message', (req, res) => {
     const schema = joi.object().keys({
         item_id: joi.string().required(),
@@ -148,40 +123,45 @@ app.post('/send_message', (req, res) => {
     var error = schema.validate(req.body).error
     if(error == null){
         db.search_user(req.body.user_id).then(user_info =>{
-            console.log(user_info)
-            save_chat(user_info, req.body)
-            res.send('saved successfully to ' + req.body.item_id);
+            if(user_info != null){
+                //console.log(user_info)
+                save_chat(user_info, req.body).then(err =>{
+                    if(err == null){
+                        res.status(200)
+                        res.send('saved successfully to ' + req.body.item_id);
+                    }
+                    else{
+                        res.status(500)
+                        res.send({'Error': ["server internal error"]})
+                    }
+                })
+            }
+            else {
+                res.status(404)
+                res.send({'Error' : ["not found " + req.body.user_id]});
+            }
         })
     }
     else{
-        console.log(error.details.message)
-        res.send(error)
+        console.log(error.details)
+        res.status(403)
+        res.send({"Errors": error.details})
     }
-    //console.log(req.body)
 });
 
 app.listen(port, () => {
   console.log(`listening on *:${port}`);
 });
 
-<<<<<<< Updated upstream
-function save_chat(user_info, req_body){
-=======
 // Funtions
 
 // Saving message to the database
 async function save_chat(user_info, req_body){
->>>>>>> Stashed changes
     var now = new Date();
-    var now_str = LoadProc(now)
-    //console.log()
+    var now_str = load_proc(now)
 
     var room_id = req_body.item_id
-<<<<<<< Updated upstream
-
-=======
     /* Uncomment if you want to save chats in your local chat.json (1)
->>>>>>> Stashed changes
     var tmp = {
         "user_id": req_body.user_id,
         "user_name": user_info.user_name,
@@ -203,37 +183,42 @@ async function save_chat(user_info, req_body){
             if(err) return 2;
         });
     }
+    */
+    var err1 = await db.create_table(room_id)
+    if(err1 == null){
+        var err2 = await db.insert_message(room_id, req_body.user_id, now_str, req_body.message)
+        if(err2) return err2
+    }
+    else return err1
     
-    return 0
+    return null
 }
 
-<<<<<<< Updated upstream
-function get_chat(id){
-    var now = new Date();
-    var now_str = LoadProc(now)
-
-=======
 
 // Request to the database, Returns message list in API format
 async function get_chat(id){
     var now = new Date();
     var now_str = load_proc(now)
     /* Uncomment if you want to save chats in your local chat.json (2)
->>>>>>> Stashed changes
     var i = isinJson(id, "item_id", chat.chatrooms)
     if (i != null){
         chat.chatrooms[i].date = now_str
         return chat.chatrooms[i]
     }
     return ret_room(id, now_str, [])
+    */
+    var chats = null
+    var err = await db.create_table(id)
+    if(err == null){
+        var res = await db.get_messages(id)
+        chats = ret_room(id, now_str, res)
+    }
+    else console.log(err)
+    return chats
 }
 
-<<<<<<< Updated upstream
-function LoadProc(date) {
-=======
 // Return date string in API format
 function load_proc(date) {
->>>>>>> Stashed changes
     var Year = date.getFullYear().toString().padStart(2, "0");
     var Month = (date.getMonth()+1).toString().padStart(2, "0");
     var Date = date.getDate().toString().padStart(2, "0");
@@ -245,20 +230,7 @@ function load_proc(date) {
     return Year + Month + Date + Hour + Min + Sec;
 }
 
-<<<<<<< Updated upstream
-function isinJson(id, target, list){
-    for(var i = 0; i < list.length; i++){
-        //console.log(id + "," + list[i][target])
-        if(id == list[i][target]){
-            return i
-        }
-    }
-    return null
-}
-
-=======
 // Return in a chatroom api format
->>>>>>> Stashed changes
 function ret_room(id, date, mes){
     return {
         "item_id": id,
@@ -268,14 +240,6 @@ function ret_room(id, date, mes){
     }
 }
 
-<<<<<<< Updated upstream
-function get_userinfo(id){
-    return ["test", "NoImage"];
-}
-
-function read_local(name){
-    return JSON.parse(fs.readFileSync(name + '.json', 'utf8')); 
-=======
 // Read you local json file
 function read_local(name){
     return require(name)
@@ -293,12 +257,13 @@ function isinJson(id, target, list){
 
 // Get item from rakutenAPI using python wrapper
 async function get_item(id){
-    var iconv = require('iconv-lite');
+    //var iconv = require('iconv-lite');
     return new Promise((resolve, reject) => {
         new Promise((resolve, reject) => {
             get_api_item.send(id)
             get_api_item.on('message', data => {
-                resolve(JSON.parse(data))
+                if(data.toString() == 'Error') resolve(null)
+                else resolve(JSON.parse(data))
             });
             get_api_item = new PythonShell('./scripts/getAPIcode.py');
         }).then(data =>{
@@ -307,9 +272,9 @@ async function get_item(id){
                 var tmp = list_iteminfo(data[0])
                 resolve(tmp)
             }catch{
-                reject(null)
+                resolve(null)
             }
-        })
+        }, err => { resolve(null) })
     })
 }
 
@@ -344,13 +309,13 @@ function list_iteminfo(data){
     images.push(data.imageUrl2)
     images.push(data.imageUrl3)
     var tmp = {
-        "item_id": data.item_code,
+        "item_id": data.itemCode,
         "name": data.itemName,
         "price": data.itemPrice,
         "rating": 0,
+        "item_url": data.itemUrl,
         "description": data.itemCaption,
         "images": images
     }
     return tmp
->>>>>>> Stashed changes
 }
