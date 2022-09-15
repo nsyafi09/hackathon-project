@@ -139,6 +139,7 @@
   
   /* PICTURE STARTS */
   .item-picture {
+    position: static;
     margin-bottom: 20px;
     min-width: 90vw;
     background-color: #D9D9D9;

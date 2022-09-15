@@ -9,7 +9,9 @@ import ChatBox from '../components/ChatBox';
 function ItemPage() {
   return (
     <div>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <ShowItem2/>
       <ChatBox/>
       <Footer/>
