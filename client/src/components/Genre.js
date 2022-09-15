@@ -34,7 +34,7 @@ function Genre () {
           </Link>
 
           <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
-            <div className="card 3">
+            <div className="card 2">
               <div className="card_image">
                 <img
                   src="https://img.olympicchannel.com/images/image/private/t_16-9_3200/primary/pwmyxhud4bfauldamlhb"
@@ -46,8 +46,8 @@ function Genre () {
             </div>
           </Link>
           
-          <Link to="/chatpage">
-            <div className="card 2">
+          <Link to="/itempage" state={{item_id : "ezaki-g:10225380"}}>
+            <div className="card 3">
               <div className="card_image">
                 <img
                   src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"

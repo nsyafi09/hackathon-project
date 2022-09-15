@@ -53,7 +53,9 @@ function ShowItem(props) {
   return (
     <section className="item-container">
       <div className="item-picture">
-        <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/>
+        {/* <img src={`${process.env.PUBLIC_URL}` + `${state.images[0]}`}/> */}
+        {/* Placeholder */}
+        <img src="https://shop.r10s.jp/ezaki-g/cabinet/220602-1/epmxft-ut-01.jpg"></img>
       </div>
       <div className="item-details">
         <h1 className='Item_name'>{state.name ?? "loading"} </h1>
