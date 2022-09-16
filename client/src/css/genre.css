@@ -75,4 +75,13 @@
       /* On small screens, we are no longer using row direction but column */
       flex-direction: column;
     }
+
+    .card {
+      width: 40vw;
+      height: 90px;
+    }
+
+    .card_title {
+      display: none;
+    }
   }
