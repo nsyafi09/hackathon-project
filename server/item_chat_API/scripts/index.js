@@ -93,6 +93,9 @@ app.get("/get_message_list/:item_id", (req, res) => {
     })
     var error = schema.validate(req.params).error
     if(error == null){
+        if(id.indexOf(':') != -1){
+            id = id.split(":")[1]
+        }
         console.log("chat request: " + id)
         get_chat(id).then(ret_chats => {
             //console.log(ret_chats)
@@ -161,6 +164,9 @@ async function save_chat(user_info, req_body){
     var now_str = load_proc(now)
 
     var room_id = req_body.item_id
+    if(room_id.indexOf(':') != -1){
+        room_id = room_id.split(":")[1]
+    }
     /* Uncomment if you want to save chats in your local chat.json (1)
     var tmp = {
         "user_id": req_body.user_id,
