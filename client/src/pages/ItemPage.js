@@ -28,7 +28,7 @@ function ItemPage() {
       </header>
       <div className='disapear-mobile'>
         <ShowItem item_id = {item_id}/>
-        <ChatBox item_id = {item_id} user_id = "500" user_name = {"Cobra"}/>
+        <ChatBox item_id = {item_id} user_id = "1002" user_name = {"Syafi"}/>
       </div>
       <Tabs/>
       <Footer/>
