@@ -22,6 +22,24 @@ exports.connect_db = function(){
         resolve(con)
     })
 }
+/* to use mysql2/promise
+exports.connect_db = function(){
+    return new Promise((resolve, reject) => {
+        try{
+            con = mysql.createConnection({
+            host: '127.0.0.1',
+            user: 'root',
+            password: 'rakuten-hackthon',
+            database: "rakuten_hackthon"
+            });
+        }
+        catch{
+            reject("Error")
+        }
+        resolve(con)
+    })
+}
+*/
 
 // Create chatroom session table
 exports.create_table = async function(table_id){
